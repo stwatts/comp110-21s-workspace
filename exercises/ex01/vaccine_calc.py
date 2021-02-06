@@ -42,5 +42,5 @@ print("Doses administered: " + str(Administered))
 print("Doses per day: " + str(Rate))
 print("Target percent vaccinated " + str(Target))
 
-str1: str= print("We will reach " + str(Target) + "% vaccination in " + str(Days_remaining)
-+ " days, which falls on " + future.strftime("%B %d, %Y") + ".")
+print("We will reach " + str(Target) + "% vaccination in " + str(Days_remaining) +
+    " days, which falls on " + future.strftime("%B %d, %Y") + ".")
