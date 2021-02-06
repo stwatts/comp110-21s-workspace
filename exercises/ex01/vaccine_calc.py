@@ -16,7 +16,6 @@ from datetime import datetime
 # Official Documentation: https://docs.python.org/3/library/datetime.html#datetime.timedelta
 from datetime import timedelta
 
-
 # Begin your solution here...
 
 today: datetime = datetime.today()
