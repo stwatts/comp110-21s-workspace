@@ -32,10 +32,9 @@ Rate = int(input())
 print("Please enter desired percent of population to be vaccinated")
 Target = int(input())
 
-
-Target_population: int = Population * (Target/100)
-Population_remaining: int = Target_population - 0.5 * Administered
-Days_remaining: int = math.ceil(2 * Population_remaining / Rate) 
+Target_population: float = Population * (Target / 100)
+Population_remaining: float = Target_population - 0.5 * Administered
+Days_remaining: float = math.floor(2 * Population_remaining / Rate) 
 
 remaining: timedelta = timedelta(Days_remaining)
 
@@ -47,6 +46,3 @@ print("Doses per day: " + str(Rate))
 print("Target percent vaccinated " + str(Target))
 
 print("We will reach " + str(Target) + "% vaccination in " + str(Days_remaining) + " days, which falls on " + future.strftime("%B %d, %Y") + ".")
-
-
-
