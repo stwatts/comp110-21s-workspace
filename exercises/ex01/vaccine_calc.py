@@ -19,8 +19,6 @@ from datetime import timedelta
 
 # Begin your solution here...
 
-import math
-
 today: datetime = datetime.today()
 
 print("Please enter the population")
@@ -34,7 +32,7 @@ Target = int(input())
 
 Target_population: float = Population * (Target / 100)
 Population_remaining: float = Target_population - 0.5 * Administered
-Days_remaining: float = math.floor(2 * Population_remaining / Rate) 
+Days_remaining: float = round((2 * Population_remaining / Rate))
 
 remaining: timedelta = timedelta(Days_remaining)
 
@@ -45,4 +43,5 @@ print("Doses administered: " + str(Administered))
 print("Doses per day: " + str(Rate))
 print("Target percent vaccinated " + str(Target))
 
-print("We will reach " + str(Target) + "% vaccination in " + str(Days_remaining) + " days, which falls on " + future.strftime("%B %d, %Y") + ".")
+str1: str= print("We will reach " + str(Target) + "% vaccination in " + str(Days_remaining)
++ " days, which falls on " + future.strftime("%B %d, %Y") + ".")
