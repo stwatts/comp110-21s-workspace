@@ -16,7 +16,7 @@ def main() -> None:
     # TODO 4: Call future_date and store result in a variable.
     y: datetime = future_date(x)
     # TODO 5: Print the expected output using the variables above.
-    print(x)
+    print(str(x))
     print(y.strftime("%B %d, %Y"))
 
 
@@ -30,7 +30,7 @@ def days_to_target(a: int, b: int, c: int, d: int) -> int:
 
 
 # TODO 3: Define future_date function
-def future_date(a: int) -> datetime:
+def future_date(a: int) -> str:
     """Gives expected date to reach targeted population."""
     today: datetime = datetime.today()
     remaining: timedelta = timedelta(a)
