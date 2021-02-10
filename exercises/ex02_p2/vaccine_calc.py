@@ -14,7 +14,7 @@ def main() -> None:
     # TODO 2: Call days_to_target and store result in a variable.
     x: int = days_to_target(population, doses, doses_per_day, target)
     # TODO 4: Call future_date and store result in a variable.
-    y: datetime = future_date(x)
+    y: str = future_date(x)
     # TODO 5: Print the expected output using the variables above.
     print(str(x))
     print(y.strftime("%B %d, %Y"))
@@ -35,7 +35,7 @@ def future_date(a: int) -> str:
     today: datetime = datetime.today()
     remaining: timedelta = timedelta(a)
     difference: datetime = today + remaining
-    return(difference)
+    return(str(difference))
 
 
 if __name__ == "__main__":
