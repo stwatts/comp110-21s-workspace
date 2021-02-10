@@ -2,7 +2,7 @@
 
 from datetime import datetime, timedelta
 
-__author__ = "YOUR 9-DIGIT PID"
+__author__ = "720332576"
 
 
 def main() -> None:
@@ -12,14 +12,28 @@ def main() -> None:
     doses_per_day: int = int(input("Doses per day: "))
     target: int = int(input("Target percent vaccinated: "))
     # TODO 2: Call days_to_target and store result in a variable.
+    x: int = days_to_target(population, doses, doses_per_day, target)
     # TODO 4: Call future_date and store result in a variable.
+    y: datetime = future_date(x)
     # TODO 5: Print the expected output using the variables above.
+    print(x)
+    print(y.strftime("%B %d, %Y"))
 
 
 # TODO 1: Define days_to_target function
-
+def days_to_target(a: int, b: int, c: int, d: int) -> int:
+    """How many days to target?"""
+    x: float = a * (d / 100)
+    y: float = x - 0.5 *b
+    z: float = round((2 * y / c))
+    return(z)
 
 # TODO 3: Define future_date function
+def future_date(a: int) -> datetime:
+    """"Gives expected date to reach targeted population."""
+    today: datetime = datetime.today()
+    remaining: timedelta = timedelta(a)
+    return(today + remaining)
 
 
 if __name__ == "__main__":
