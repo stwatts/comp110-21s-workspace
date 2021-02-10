@@ -11,8 +11,8 @@ def main() -> None:
 
 
 # TODO 1: Define the tar_heels function, and its logic, here.
-def tar_heels(z:int) -> str:
-    """takes input and does mod to see what str to return"""
+def tar_heels(z:int) -> str: 
+    """Takes input and does mod to see what str to return!"""
     a = z % 2
     b = z % 7
 
@@ -26,6 +26,7 @@ def tar_heels(z:int) -> str:
                 return("HEELS")
             else:
                 return("CAROLINA")
+
 
 if __name__ == "__main__":
     main()

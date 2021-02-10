@@ -15,7 +15,7 @@ def main() -> None:
 
 # TODO 1: Define your fortune_cookie function here.
 def fortune_cookie() -> str:
-"""fortune cookie function, using randint to determine what str to return"""
+    """fortune cookie function, using randint to determine what str to return"""
     x: int = randint(1, 4)
     if x == 1:
         return("You will find the love of your life this year.")
