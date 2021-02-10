@@ -15,6 +15,7 @@ def main() -> None:
 
 # TODO 1: Define your fortune_cookie function here.
 def fortune_cookie() -> str:
+#fortune cookie function, using randint to determine what str to return
     x: int = randint(1, 4)
     if x == 1:
         return("You will find the love of your life this year.")
@@ -26,11 +27,14 @@ def fortune_cookie() -> str:
                 return("You will be vaccinated for coronavirus this year.")
             else:
                 if x == 4:
-                    return("You will pass comp 110 with an A this year.")
-                
+                    return("You will pass comp 110 with an A this year.")                
+                else:
+                    return
+
 
 
 # Python Idiom for "starting" the program when run as a module.
 # The special dunder variable __name__ will be "__main__" when run as module. 
 if __name__ == "__main__":
     main()
+
