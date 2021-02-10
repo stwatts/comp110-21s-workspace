@@ -24,16 +24,18 @@ def main() -> None:
 def days_to_target(a: int, b: int, c: int, d: int) -> int:
     """How many days to target?"""
     x: float = a * (d / 100)
-    y: float = x - 0.5 *b
-    z: float = round((2 * y / c))
+    y: float = x - 0.5 * b
+    z: int = round((2 * y / c))
     return(z)
+
 
 # TODO 3: Define future_date function
 def future_date(a: int) -> datetime:
-    """"Gives expected date to reach targeted population."""
+    """Gives expected date to reach targeted population."""
     today: datetime = datetime.today()
     remaining: timedelta = timedelta(a)
-    return(today + remaining)
+    difference: datetime = today + remaining
+    return(difference)
 
 
 if __name__ == "__main__":
