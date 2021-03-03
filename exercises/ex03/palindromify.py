@@ -5,8 +5,8 @@ __author__: str = "720332576"
 
 def palindromify(x: str, y: bool) -> str:
     """Palindromifies your string."""
-    mylist: List[str] = []
-    reverselist: List[str] = []
+    mylist: str = []
+    reverselist: str = []
     i = 0
     a = len(x)
     if y:
