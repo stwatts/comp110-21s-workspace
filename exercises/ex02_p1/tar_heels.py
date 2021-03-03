@@ -1,12 +1,17 @@
 """Tar Heels exercise redux as a structured program."""
 
+<<<<<<< HEAD
 __author__ = "720332576"
+=======
+__author__ = "YOUR 9-DIGIT PID"
+>>>>>>> 1e6a345b2b95447229e19d3cf5640ea05677a944
 
 
 def main() -> None:
     """The entrypoint of the program, when run as a module."""
     choice: int = int(input("Enter an int: "))
     # TODO 2: Print the response of calling the tar_heels function here.
+<<<<<<< HEAD
     print(tar_heels(choice))
 
 
@@ -26,6 +31,11 @@ def tar_heels(z: int) -> str:
                 return("HEELS")
             else:
                 return("CAROLINA")
+=======
+
+
+# TODO 1: Define the tar_heels function, and its logic, here.
+>>>>>>> 1e6a345b2b95447229e19d3cf5640ea05677a944
 
 
 if __name__ == "__main__":
