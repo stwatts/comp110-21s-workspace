@@ -38,10 +38,10 @@ def list_primes(x: int, y: int) -> list[int]:
     h = 0
     allprimes = []
     while h < len(myprimes):
-        if myprimes[h] == True:
+        if myprimes[h]:
             allprimes.append(myrange[h])
         h += 1
-    print(allprimes)
+    return allprimes
 
 
 def main() -> None:
@@ -49,7 +49,7 @@ def main() -> None:
     print(is_prime(int(input())))
     a = int(input())
     b = int(input())
-    list_primes(a,b)
+    print(list_primes(a, b))
     # Put print statements here to test your function
     # ex. print(is_prime(5)), print(list_primes(10, 20))
 
