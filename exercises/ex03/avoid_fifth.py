@@ -2,8 +2,9 @@
 
 __author__: str = "720332576"
 
+
 def avoid_fifth(x: str) -> str:
-    """Removes all e or E characters"""
+    """Removes all e or E characters."""
     y = len(x)
     mylist = []
     i = 0
