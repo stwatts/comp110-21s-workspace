@@ -5,11 +5,11 @@ __author__: str = "720332576"
 
 def palindromify(x: str, y: bool) -> str:
     """Palindromifies your string."""
-    mylist = []
-    reverselist = []
+    mylist: List[str] = []
+    reverselist: List[str] = []
     i = 0
     a = len(x)
-    if y == True:
+    if y:
         while i < a:
             mylist.insert(i, x[i])
             reverselist.insert(i, x[i])
@@ -31,8 +31,8 @@ def palindromify(x: str, y: bool) -> str:
 def main() -> None:
     """Entrypoint of the program."""
     a = str(input())
-    b = (len(a) - 1) % 2
-    print(palindromify(a,b))
+    b = bool((len(a) - 1) % 2)
+    print(palindromify(a, b))
 
 
 if __name__ == "__main__":
