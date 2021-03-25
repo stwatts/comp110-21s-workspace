@@ -17,7 +17,7 @@ def read_csv_rows(csv_file: str) -> list[dict[str, str]]:
     return rows
 
 
-def column_values(table: list[[dict[str, str]]], x: str) -> list[str]:
+def column_values(table: list[dict[str, str]], x: str) -> list[str]:
     """Creates a list of strs of all the values in a column."""
     columns: list[str] = []
     for row in table:
@@ -32,23 +32,26 @@ def columnar(table: list[dict[str, str]]) -> dict[str, list[str]]:
     columns: dict[str, list[str]] = {}
     for row in table:
         for a in row:
-             if a not in columns:
-                columns[a] = column_values(table,a)
+            if a not in columns:
+                columns[a] = column_values(table, a)
     return columns
 
 
 def head(table: dict[str, list[str]], rows: int) -> dict[str, list[str]]:
     """Head function to display first N rows."""
-    newdict: dict[str, list[str]] = {}
-    keys: list = table.keys()
-    for key in keys:
-        values: list = []
-        i: int = 0
-        while i < rows:
-            values.append(table[key][i])
-            i += 1
-        newdict[key] = values
-    return newdict
+    if rows >= len(table):
+        return table
+    else:
+        newdict: dict[str, list[str]] = {}
+        keys: list[str] = table.keys()
+        for key in keys:
+            values: list[str] = []
+            i: int = 0
+            while i < rows:
+                values.append(table[key][i])
+                i += 1
+            newdict[key] = values
+        return newdict
         
 
 def select(table: dict[str, list[str]], names: list[str]) -> dict[str, list[str]]:
@@ -72,4 +75,3 @@ def count(data: list[str]) -> dict[str, int]:
             newdict[data[i]] = 1
             i += 1
     return newdict
-
