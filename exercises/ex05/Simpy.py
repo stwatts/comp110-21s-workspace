@@ -8,6 +8,7 @@ __author__ = "720332576"
 
 
 class Simpy:
+    """Simpy class."""
     values: list[float]
 
     def __init__(self, values: list[float]):
@@ -23,8 +24,8 @@ class Simpy:
         self.values = []
         i: int = 0
         while i < repeat:
-           self.values.append(value)
-           i += 1
+            self.values.append(value)
+            i += 1
         return self
 
     def arange(self, start: float, stop: float, step: float = 1.0) -> None:
@@ -44,7 +45,7 @@ class Simpy:
                 i += step
             return self
 
-    def sum(self) -> None:
+    def sum(self) -> float:
         """Adds all numbers in object together."""
         return sum(self.values)
 
