@@ -46,7 +46,7 @@ class Simpy:
             return self
 
     def sum(self) -> float:
-        """Adds all numbers in object together."""
+        """Adds all numbers in an object together."""
         return sum(self.values)
 
     def __add__(self, rhs: (Union[float, Simpy])) -> Simpy:
