@@ -1,54 +1,58 @@
-"""PJ00-Choose Your Own Adventure"""
+"""PJ00-Choose Your Own Adventure."""
+
+from random import randint
+
 """Added loops so you can continue playing"""
 """Added input error handling"""
 
 __author__ = "720332576"
-
-from random import randint
 
 player: str
 points: int
 boo: bool = False
 MAKEITRAIN: str = "\U0001F4B8"
 
+
 def main() -> None:
     """The entrypoint of the program, when run as a module."""
     greet()
+    choosegame()
     
 
 def greet() -> None:
     """Greets the players."""
-    print("Hello, what is your name?")
     global player
     global points
     global MAKEITRAIN
+    print("Hello, what is your name?")
     player = input()
     print(f"Welcome {player}, we are glad you are here.")
     print(f"You have been awarded 100 points to spend. Use them wisely {MAKEITRAIN}")
     points = 100
-    choosegame()
+
 
 def choosegame() -> None:
     """The player chooses which minigame to play."""
     print("Which minigame would you like to play? \n a-High Card/Low Card \n b-Guess The Number \n c-Quit")
     global points
     global MAKEITRAIN
+    global boo
     x: str = input()
     if x == "a" or x == "A":
-            hilowgreet()
+        hilowgreet()
     else:
-            if x == "b" or x == "B":
-                guessnumbergreet()
+        if x == "b" or x == "B":
+            guessnumbergreet()
+        else:
+            if x == "c" or x == "C":
+                boo = False
+                print(f"Thank you for playing, {player}!")
+                print(f"You ended with {points} points {MAKEITRAIN}")
+                points = 0
             else:
-                if x == "c" or x == "C":
-                    print(f"Thank you for playing, {player}!")
-                    print(f"You ended with {points} points {MAKEITRAIN}")
-                    points = 0
-                else:
-                    print("You have entered an incorrect command. Please try again")
-                    choosegame()
+                print("You have entered an incorrect command. Please try again")
+                choosegame()
             
-
     
 def hilowgreet() -> None:
     """High Card Low Card Minigame."""
@@ -56,6 +60,7 @@ def hilowgreet() -> None:
     print("Dual against the computer. Highest card wins!")
     print("Unlike the casino, the odds are slightly in your favor!")
     hilow()
+
 
 def hilow() -> None:
     """Hi/low card game."""
@@ -77,21 +82,22 @@ def hilow() -> None:
                     z: int
                     if x <= points:
                         print(f"You wagered {x} points")
-                        y = randint(1,10)
-                        z = randint(1,10)
+                        y = randint(1, 10)
+                        z = randint(1, 10)
                         print(f"You drew a {y}")
                         print(f"The computer drew a {z}")
                         if y >= z:
-                            points =  points + x
+                            points = points + x
                             print(f"You win! You have earned {x} points. You now have {points} points {MAKEITRAIN}")
                             print("Would you like to play again? Y/N")
                             a = input()
-                            if a == "y" or a=="Y":
-                                boo == True
+                            if a == "y" or a == "Y":
+                                boo = True
                                 break
                             else:
-                                boo == False
+                                boo = False
                                 choosegame()
+                                break
                         else:
                             points = points - x
                             print(f"You lose! You lost {x} points. You now have {points} points {MAKEITRAIN}")
@@ -104,7 +110,7 @@ def hilow() -> None:
                             print("Would you like to play again? Y/N")
                             a = input()
                             if a == "y" or a == "Y":
-                                boo == True
+                                boo = True
                                 break
                             else:
                                 boo = False
@@ -115,7 +121,6 @@ def hilow() -> None:
                 break
             
 
-
 def guessnumbergreet() -> None:
     """Guess the number game greeting."""
     print("Welcome to Guess The Number")
@@ -123,6 +128,7 @@ def guessnumbergreet() -> None:
     print("If you correctly guess in 10 or less tries then you win! Otherwise, you lose your wager.")
     print("Values range from 1-100. Good luck!")
     guessnumber()
+
 
 def guessnumber() -> None:
     """Guess the number minigame."""
@@ -139,7 +145,7 @@ def guessnumber() -> None:
             except ValueError:
                 print("Please input a number")
             else:
-                y: int = randint(1,100)
+                y: int = randint(1, 100)
                 z: int = 0
                 count: int = 0
                 if x <= points:
@@ -151,7 +157,7 @@ def guessnumber() -> None:
                     print("What is your guess?")
                     while True:
                         try:
-                            z=int(input())
+                            z = int(input())
                         except ValueError:
                             print("Please input a number")
                         else:                    
@@ -216,8 +222,11 @@ def outofpoints() -> None:
         print("You have entered an incorrect command. Please try again.")
         outofpoints()
 
+
 def endgame() -> None:
+    """Endgame to force endgame. Helps prevent unnecessary bugs."""
     print(f"Thanks for playing, {player}!")
+
 
 if __name__ == "__main__":
     main()
