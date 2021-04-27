@@ -1,19 +1,23 @@
-def main() -> None:
-    b: list[str] = a
-    f(a)
-    g()
-    print(b[0])
+from __future__ import annotations
 
-def f(a: list[str]) -> None:
-    a[0] = "w"
-    a = ["K", "j"]
+from typing import Union
 
-def g() -> None:
-    global a
-    a[1] = "m"
-    a = ["y", "p"]
+class Yikes:
+    x: int = 0
 
-    
-a = ["u", "g"]
+    def __add__(self, rhs: Yikes) -> int:
+        self.x += rhs.x
+        return self.x
 
-main()
+a: Yikes = Yikes()
+a.x = 5
+b: Yikes = Yikes()
+b.x = 10
+c: int = a + b
+
+d: int = b + a
+
+y: Yikes = Yikes()
+y.x = 1
+z: int = y.x + 1
+print(z)
